@@ -1,4 +1,4 @@
-# Docker Volume Backup Cleanup
+# Cleanup Failed Docker Backups
 
 This repository hosts a Bash script designed for cleaning up directories within the Docker Volume Backup system. It is intended to be used in conjunction with the [Docker Volume Backup](https://github.com/kevinveenbirkenbach/docker-volume-backup) project.
 
