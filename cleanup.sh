@@ -4,7 +4,7 @@
 BACKUP_HASH="$1"
 
 # Define main directory containing subdirectories to potentially be deleted
-MAIN_DIRECTORY="/Backups/$BACKUP_HASH/docker-volume-backup"
+MAIN_DIRECTORY="/Backups/$BACKUP_HASH/backup-docker-to-local"
 echo "Checking backup directory: $MAIN_DIRECTORY"
 
 # Define trigger directory argument as TRIGGER_DIR
