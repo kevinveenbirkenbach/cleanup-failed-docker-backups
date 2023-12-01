@@ -15,8 +15,12 @@ for SUBDIR in "$MAIN_DIRECTORY"/*; do
 
     # Only proceed if it is a directory
     if [ -d "$SUBDIR" ]; then
+            echo "Validating directory: $SUBDIR"
             # Only proceed if the specified trigger directory does not exist within the subdirectory
-            if [ ! -d "$SUBDIR/$TRIGGER_DIR" ]; then
+            FULL_TRIGGER_DIR_PATH="$SUBDIR/$TRIGGER_DIR"
+            if [ ! -d "$FULL_TRIGGER_DIR_PATH" ]; then
+                echo "Validation: error"
+                echo "Missing directory: $FULL_TRIGGER_DIR_PATH"
                 # Display the subdirectory contents
                 echo "Contents of subdirectory: $SUBDIR"
                 ls "$SUBDIR"
@@ -31,7 +35,8 @@ for SUBDIR in "$MAIN_DIRECTORY"/*; do
                     rm -vrf "$SUBDIR"
                 fi
             else
-                echo "$SUBDIR contains $TRIGGER_DIR."
+                echo "Validation: ok"
+                echo "$SUBDIR contains $FULL_TRIGGER_DIR_PATH."
             fi
     fi
 done
