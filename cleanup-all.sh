@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Define trigger directory argument as TRIGGER_DIR
+TRIGGER_DIR="$2"
+
 # Get the absolute path of the directory where the current script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
@@ -25,8 +28,8 @@ for BACKUP_FOLDER_PATH in "$MAIN_DIRECTORY"/*; do
     if [ -d "$BACKUP_FOLDER_PATH/backup-docker-to-local" ]; then
         echo "Running cleanup script for folder: $BACKUP_FOLDER"
 
-        # Call the cleanup script with just the folder name
-        "$CLEANUP_SCRIPT" "$BACKUP_FOLDER"
+        # Call the cleanup script
+        "$CLEANUP_SCRIPT" "$BACKUP_FOLDER" "$TRIGGER_DIR"
     else
         echo "Directory $BACKUP_FOLDER_PATH/backup-docker-to-local not found."
     fi
