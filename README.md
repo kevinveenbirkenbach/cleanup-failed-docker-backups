@@ -15,7 +15,7 @@ For more detailed information about the script's workings, refer to the comments
 To use this script, clone this repository to your local system and run the script with the necessary arguments. The command should be structured as follows:
 
 ```bash
-bash cleanup.sh BACKUP_HASH TRIGGER_DIRECTORY
+bash cleanup.sh BACKUP_HASH
 ```
 
 Replace ```BACKUP_HASH``` and ```TRIGGER_DIRECTORY``` with your actual values.
