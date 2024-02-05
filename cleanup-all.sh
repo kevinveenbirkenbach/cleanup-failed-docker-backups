@@ -7,7 +7,7 @@ TRIGGER_DIR="$2"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Define the path to the original cleanup script using the script directory path
-CLEANUP_SCRIPT="$SCRIPT_DIR/cleanup_script.sh"
+CLEANUP_SCRIPT="$SCRIPT_DIR/cleanup.sh"
 
 # Path to the main directory
 MAIN_DIRECTORY="/Backups"
