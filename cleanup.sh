@@ -18,9 +18,9 @@ for SUBDIR in "$MAIN_DIRECTORY"/*; do
     # Only proceed if it is a directory
     if [ -d "$SUBDIR" ]; then
         echo "Validating directory: $SUBDIR"
-
+        scripts_directory="$(dirname "$(dirname "$(realpath "$0")")")"
         # Call the Python script for validation
-        python ../directory-validator/directory-validator.py "$SUBDIR" --validate
+        python $scripts_directory/directory-validator/directory-validator.py "$SUBDIR" --validate
         VALIDATION_STATUS=$?
 
         if [ $VALIDATION_STATUS -eq 0 ]; then
